@@ -1,0 +1,23 @@
+{
+  "name": "yafe-template",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/ok2ju/yafe-template.git",
+  "author": "ok2ju <soulSpringg@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "commitlint-config-jira": "^1.3.0",
+    "commitlint-plugin-jira-rules": "^1.3.0",
+    "husky": "^4.2.3"
+  }
+}
