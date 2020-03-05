@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Loading...</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+    <meta name="robots" content="none">
+    <meta name="version" content="<%= appVersion %>" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <%= Object.entries(htmlWebpackPlugin.files.chunks).map(([_, { entry }]) =>
+      `<script src="${injectConfigValue('APP_PREFIX')}${entry}"></script>`
+    ).join("\n") %>
+  </body>
+</html>
